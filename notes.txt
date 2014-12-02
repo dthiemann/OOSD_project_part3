@@ -7,9 +7,11 @@ Notes for project part 3
 	prefix/suffix - Anu
 	contains, greater than, less than - Karla
 	
+(3) Combination of searches - up for grabs
+	
 (4) String parsing - Dylan
 
-(5) Return an iterator instead of a list
+(5) Return an iterator instead of a list - up for grabs
 
 Which field object has most identifiers
 
