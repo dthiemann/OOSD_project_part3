@@ -1,3 +1,10 @@
 Dylan's Contribution to December 5th Due Date
 
 Role: Research and implement string parsing algorithm for queries (e.g. "Search (prefix ("Word","pre"))") should perform a search with key "Word" looking for values with a prefix of "pre".
+Specifications of work to be done: Need to find a library or tool that allows for string parsing around parentheses. This is imperative to the success of implementing a string parsing algorithm
+
+Classes & Interfaces
+
+
+Unit Tests
+
