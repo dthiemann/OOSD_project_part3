@@ -1,10 +1,11 @@
 Notes for project part 3
 
-
 (1) Try (Research) the web-server - Ray
 
 (2) Each member works on a version of number 2
 	prefix, suffix, contains, greater than, less than...
+	prefix/suffix - Anu
+	contains, greater than, less than - Karla
 	
 (4) String parsing - Dylan
 
