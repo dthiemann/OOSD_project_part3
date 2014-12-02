@@ -1,0 +1,3 @@
+Dylan's Contribution to December 5th Due Date
+
+Role: Research and implement string parsing algorithm for queries (e.g. "Search (prefix ("Word","pre"))") should perform a search with key "Word" looking for values with a prefix of "pre".
