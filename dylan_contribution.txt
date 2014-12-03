@@ -1,10 +1,32 @@
 Dylan's Contribution to December 5th Due Date
 
-Role: Research and implement string parsing algorithm for queries (e.g. "Search (prefix ("Word","pre"))") should perform a search with key "Word" looking for values with a prefix of "pre".
-Specifications of work to be done: Need to find a library or tool that allows for string parsing around parentheses. This is imperative to the success of implementing a string parsing algorithm
+Role: 
+Research and implement string parsing algorithm for queries (e.g.
+"Search (prefix ("Word","pre"))") should perform a search with key
+"Word" looking for values with a prefix of "pre". 
 
-Classes & Interfaces
+Specifications of work to be done:
+Need to find a library or tool that allows for string
+parsing around parentheses. This is imperative to the success of
+implementing a string parsing algorithm
 
+Classes & Interfaces:
+(1) Utility class that performs the extraction of strings between parentheses 
+(2) ComboSearch.java class that will make use of the Utility string parser to properly
+the searches.
 
-Unit Tests
-
+Unit Tests:
+UtilityClassTest.java // Name pending
+1. Test that it can handle a simple query such as "Search (equals ("Temperature", 85))"
+2. Test that it sends the correct error when Search is missing
+	e.g. "(equals ("Temperature", 85)" --> Throws an exception (displays message to user)
+3. Test that it sends the correct error when the parentheses don't match up
+	e.g. "Search (equals "Temperature", 85))" --> Throws an exception (displays message to user)
+4. Test that it sends the correct error when there's an empty query
+	e.g. "Search ( ())" or "Search ()" or "Search "
+5. Test that it parses the String correctly
+	e.g. 
+	
+ComboSearchTest.java // Name pending
+1. Test that it can produces the same results as a regular query
+	e.g. F.FindEquals() == ComboSearch(F); //Not sure how the definition will look yet
