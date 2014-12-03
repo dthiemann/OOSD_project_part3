@@ -8,7 +8,10 @@ Research and implement string parsing algorithm for queries (e.g.
 Specifications of work to be done:
 Need to find a library or tool that allows for string
 parsing around parentheses. This is imperative to the success of
-implementing a string parsing algorithm
+implementing a string parsing algorithm.
+
+The string parsing algorithm will be applied in the Utility class described
+below regarding the breaking up of a "natural" language query.
 
 Classes & Interfaces:
 (1) Utility class that performs the extraction of strings between parentheses 
@@ -30,3 +33,5 @@ UtilityClassTest.java // Name pending
 ComboSearchTest.java // Name pending
 1. Test that it can produces the same results as a regular query
 	e.g. F.FindEquals() == ComboSearch(F); //Not sure how the definition will look yet
+2. Test proper handling of Null values being passed 
+	e.g. F == null --> throw exception and/or display message to user
