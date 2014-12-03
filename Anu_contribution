@@ -1,0 +1,27 @@
+Anu's contribution for project
+
+Role: 
+Search by prefix. A Field object with ("Word","gr") would return all
+the fields with category "Word" that start with the two letters "gr".
+Search by suffix. A Field object with ("Word","gr") would return all
+the fields with category "Word" that end with the two letters "gr".
+
+
+Specifications of work to be done:
+
+
+Classes & Interfaces:
+
+
+Unit Tests:
+PrefixSuffixTest.java
+1. Test that it can return for instance, all the fields with category "Word" that start with the two letters "gr"
+    can return for instance, all the fields with category "Word" that end with the two letters "gr"
+    
+2. Test that it displays correct fields that start with "gr" or end with "gr"
+
+3. Test that it can display error message "Field category doesn't exist" when field category can't be found
+
+4. Test that it returns "Fields with prefix 'gr' cannot be found" when fields is null
+    returns "Fields with suffix 'gr' cannot be found" when fields is null
+
