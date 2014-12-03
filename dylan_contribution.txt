@@ -28,10 +28,10 @@ UtilityClassTest.java // Name pending
 4. Test that it sends the correct error when there's an empty query
 	e.g. "Search ( ())" or "Search ()" or "Search "
 5. Test that it parses the String correctly
-	e.g. 
+6. Test for property handling of Null values being passed
 	
 ComboSearchTest.java // Name pending
 1. Test that it can produces the same results as a regular query
 	e.g. F.FindEquals() == ComboSearch(F); //Not sure how the definition will look yet
-2. Test proper handling of Null values being passed 
+2. Test for proper handling of Null values being passed 
 	e.g. F == null --> throw exception and/or display message to user
