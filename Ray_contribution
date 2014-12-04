@@ -1,7 +1,8 @@
 My role: Create the RESTful interface/web server. May also be doing #3 and or #5 from 
   "enhancements to search engine" list.
-Specification of work to be done:
-
+Specification of work to be done: Research the REST interface and implement it into
+  the project. As of now, I plan to use Jersey instead of the Jetty interface but
+  until my research is completely done I won't know which one I am more comfortable with
 Description of unit test:
 
 list of classes or interfaces to be written:
