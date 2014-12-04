@@ -13,6 +13,11 @@ implementing a string parsing algorithm.
 The string parsing algorithm will be applied in the Utility class described
 below regarding the breaking up of a "natural" language query.
 
+I've tried researching different libraries that would extract the 
+information from between nested parentheses, but had little luck so 
+I figured it would be easier to write the method myself. However I will keep looking
+in the meantime.
+
 Classes & Interfaces:
 (1) Utility class that performs the extraction of strings between parentheses 
 (2) ComboSearch.java class that will make use of the Utility string parser to properly
@@ -28,10 +33,10 @@ UtilityClassTest.java // Name pending
 4. Test that it sends the correct error when there's an empty query
 	e.g. "Search ( ())" or "Search ()" or "Search "
 5. Test that it parses the String correctly
-6. Test for property handling of Null values being passed
+6. Test for proper handling of Null values being passed
 	
 ComboSearchTest.java // Name pending
-1. Test that it can produces the same results as a regular query
+1. Test that it can produces the same results as a regular query (which is guaranteed to work)
 	e.g. F.FindEquals() == ComboSearch(F); //Not sure how the definition will look yet
 2. Test for proper handling of Null values being passed 
 	e.g. F == null --> throw exception and/or display message to user
