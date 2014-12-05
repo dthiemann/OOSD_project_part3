@@ -1,0 +1,38 @@
+Karla’s Contributions: OOSD Search Engine Part III
+
+Descriptions of roles:
+  Create two more kinds of searches:
+    •	Search  by contains
+      o	A field object with (“Word”, “an”) would return all the “Word” fields that have “example” anywhere in the value
+    •	Search by greater-than
+      o	A field object with (“Word”, “example”) would return values that are alphabetically larger than “example” like (“Word”, “one”), (“Word”, “two”), (“Word”, “three”)…
+    •	Search by less-than
+     o	A field object with (“Word”, “example”) would return values that are alphabetically smaller than “example” like (“Word”, “cat”), (“Word”, “dog”), (“Word”, “bee”)…
+
+Specification of work to be done:
+  Need to create three methods in the class FieldSearch. There will one method for each of the different kinds of searches mentioned above.  Each of the class methods will return a list of strings when they are call. For example, if the contains methods is called then it will return a list of strings that contains all the “Word” fields that have “an” in the value.
+
+List of classes:
+  Two classes need to be created.  One of the classes will have methods that find whether or not a field contains “an” anywhere in the values. If it does, then it will add it to a list. The second class will find all the values that have the “Word” fields. Depending on whether the greater-than or less-than method is call, the class will return a list of field objects that contain value either less than or greater than the value that was given.
+
+Description of the unit tests:
+  SearchContainsTest.java // name temporary
+    1.	Test that checks to see if the class is accurately returning a list of field objects that all contain the given value.	
+     a.	Contains ((“Word”, “an”, [(“Word”, “can”), (“Word”, “land”), (“Word”, “band”)…])
+    2.	Test that sends an error message to the user when no field object is given
+      a.	Contains()
+    3.	Test that sends an error message when either a field category or  the substring is missing
+     a.	Contains((“Word”));
+    4.	 Test that sends an error message when the field category does not exist
+    5.	Test that displays a message when a field is Null
+    
+Alphabetical_ComparisonTest.java //name temporary
+  •	test that checks to see if the class is returning the correct list of field objects that all contain the given value when a specific class method is call
+   o	GreaterThan((“Word”, “example”),[ (“Word”, “one”), (“Word”, “two”), (“Word”, “three”);
+   o	SmallerThan(“Word”, “example”), [(“Word”, “cat”), (“Word”, “dog”), (“Word”, “bee”)])
+  •	Test that sends an error message to the user when no field object is given
+    o	GreaterThan ()
+  •	Test that sends an error message when either a field category or  the value is missing
+   o	GreaterThan ((“example”));
+  •	 Test that sends an error message when the field category does not exist
+  •	Test that displays a message when a field is Null
