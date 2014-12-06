@@ -13,6 +13,8 @@ Specification of work to be done:
 Description of unit test: 
   Test 1-4: Make sure the HTTP methods are functional with the project at both the collection
   level of the resource and the element level. 
+  Another test can be done to ensure that the URIs are valid and are able to access the 
+  desired data.
 
 list of classes or interfaces to be written:
   Client and servers should be created
