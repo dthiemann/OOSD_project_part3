@@ -1,8 +1,19 @@
-My role: Create the RESTful interface/web server. May also be doing #3 and or #5 from 
+My role: 
+  Create the RESTful interface/web server. May also be doing #3 and or #5 from 
   "enhancements to search engine" list.
-Specification of work to be done: Research the REST interface and implement it into
+  
+Specification of work to be done: 
+  Research the REST interface and implement it into
   the project. As of now, I plan to use Jersey instead of the Jetty interface but
-  until my research is completely done I won't know which one I am more comfortable with
-Description of unit test:
+  until my research is completely done I won't know which one I am more comfortable with.
+  I have decided to do use the Jersey API. I have done a lot of research and am still in 
+  the process of tying what I have researched to the project. The next step is creating a 
+  Dynamic Web Project in Java.
+
+Description of unit test: 
+  Test 1-4: Make sure the HTTP methods are functional with the project at both the collection
+  level of the resource and the element level. 
 
 list of classes or interfaces to be written:
+  Client and servers should be created
+
