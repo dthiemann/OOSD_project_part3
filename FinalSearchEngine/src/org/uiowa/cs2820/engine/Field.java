@@ -18,6 +18,15 @@ public class Field implements Serializable {
     return FieldName.equals(other.FieldName) & 
 	   FieldValue.equals(other.FieldValue);
     }
+  
+  public boolean hasPrefix(Field other) {
+	  String myFieldValue = (String) other.getFieldValue().toString();
+	  return FieldName.equals(other.FieldName) &
+			  FieldValue.toString().startsWith
+
+(myFieldValue);
+  }
+  
   public String toString() {
     return FieldName + ':' + FieldValue.toString();
     }
