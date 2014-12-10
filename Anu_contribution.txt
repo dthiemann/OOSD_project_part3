@@ -10,8 +10,11 @@ the fields with category "Word" that end with the two letters "gr".
 Specifications of work to be done:
 FieldSearch.java should return all the Field objects which have prefix/suffix matched to value.
 
+Need to find a way to create many types of searches instead of just simple search.
+
 Classes & Interfaces:
 Need a class which compares the prefix/suffix and returns found results as list of Strings
+Added method in Node to do other kinds of searches
 
 Unit Tests:
 PrefixSuffixTest.java

@@ -32,7 +32,20 @@ class SearchPrefix implements Traverser{
 		return true;
 	}
 }
-
+class SearchSuffix implements Traverser{
+	Field f = null;
+	Node h = null;
+	public SearchSuffix(Field x){
+		f = x;
+	}
+	public boolean process(Item I){
+		Node F = (Node) I;
+		if (F.Key.hasSuffix(f)){
+			h = F;
+		}
+		return true;
+	}
+}
 // local Traverser to find remove Id from all nodes
 class IdRemover implements Traverser {
   ArrayList<Node> empties;  // an array of nodes with no Ids
