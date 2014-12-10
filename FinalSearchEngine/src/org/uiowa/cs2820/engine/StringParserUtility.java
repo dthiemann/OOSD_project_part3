@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  */
 public class StringParserUtility {
-	public static void parse() {
+	public static void parse(String equation) {
 		int count_open = getCharCount(equation, '(');
 		int count_close = getCharCount(equation, ')');
 
