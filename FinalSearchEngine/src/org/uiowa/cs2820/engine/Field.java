@@ -22,11 +22,13 @@ public class Field implements Serializable {
   public boolean hasPrefix(Field other) {
 	  String myFieldValue = (String) other.getFieldValue().toString();
 	  return FieldName.equals(other.FieldName) &
-			  FieldValue.toString().startsWith
-
-(myFieldValue);
+			  FieldValue.toString().startsWith(myFieldValue);
   }
-  
+  public boolean hasSuffix(Field other) {
+	  String myFieldValue = (String) other.getFieldValue().toString();
+	  return FieldName.equals(other.FieldName) &
+			  FieldValue.toString().endsWith(myFieldValue);
+  }
   public String toString() {
     return FieldName + ':' + FieldValue.toString();
     }
