@@ -8,14 +8,36 @@ package org.uiowa.cs2820.engine;
 import java.util.*;
 
 //Iterator pattern requires that this implements the Handler
-public class IdentifierRepository(int head) implements Handler{
-	//this code is from the getAllIds class
-	//it is used to get the array list of the strings
-	// head is the disk area of the first Identifier in linked list
-    DiskLinkedList D = new DiskLinkedList(head);
-    CollectIds idlist = new CollectIds();  
-    D.traverse(idlist);
-    String [] R = (idlist.C).toArray(new String[idlist.C.size()]);
-    
-    
+public class IdentifierRepository implements Handler{
+
+	public String ids[] ={}; //function that gets all the ids in array list
+	//need something to fill in this blank
+	
+	@Override
+	public Iterator getIterator() {
+		return new IdIterator();
+	}
+	
+	private class IdIterator implements Iterator {
+		int index;
+
+		@Override
+		public boolean hasNext() {
+			if (index < ids.length){
+				return true;
+			}
+			return false;
+		}
+
+		@Override
+		public Object next() {
+			if (this.hasNext()){
+				return  ids[index++];
+			}
+			return null;
+		} 
+		
+	}
+
+	
 }
