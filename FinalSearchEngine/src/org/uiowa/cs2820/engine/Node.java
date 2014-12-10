@@ -18,6 +18,21 @@ class SearchField implements Traverser {
     }
   }
 
+class SearchPrefix implements Traverser{
+	Field f = null;
+	Node h = null;
+	public SearchPrefix(Field x){
+		f = x;
+	}
+	public boolean process(Item I){
+		Node F = (Node) I;
+		if (F.Key.hasPrefix(f)){
+			h = F;
+		}
+		return true;
+	}
+}
+
 // local Traverser to find remove Id from all nodes
 class IdRemover implements Traverser {
   ArrayList<Node> empties;  // an array of nodes with no Ids
