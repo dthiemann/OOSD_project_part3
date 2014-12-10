@@ -1,6 +1,7 @@
 package org.uiowa.cs2820.engine;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * 
@@ -15,6 +16,10 @@ import java.util.ArrayList;
  * The only function of the utility class that is public facing
  */
 public class StringParserUtility {
+	/*
+	 * Only public function that is used to parse and execute a 
+	 * query in the form of a string
+	 */
 	public static void parse(String equation) {
 		int count_open = getCharCount(equation, '(');
 		int count_close = getCharCount(equation, ')');
@@ -84,4 +89,39 @@ public class StringParserUtility {
 				wordIndex++;
 			}
 		}
+		
+		return combinators;
+	}
+	
+	/*
+	 * Get the arguments for each query, in sequential order
+	 */
+	public static ArrayList<String> getQueryArguments(String equation, int open_count, int close_count) {
+		ArrayList<String> my_equation = new ArrayList<String>();
+		
+		int running_count = open_count;
+		while (running_count > 0) {
+			int paren_count = 0;
+			int i = 0;
+			while(i < equation.length() ) {
+				if (equation.charAt(i) == '(') {
+					paren_count++;
+				}
+				if (paren_count == running_count) {
+					i = i + 1;
+					String expression = "";
+					while ((equation.charAt(i) != ')') && (equation.charAt(i) != '(')) {
+						expression = expression + equation.charAt(i);
+						i = i + 1;
+					}
+					my_equation.add(expression);
+					break;
+				}
+				i++;
+			}
+			running_count--;
+		}
+		Collections.reverse(my_equation);
+		return my_equation;
+	}
 }
