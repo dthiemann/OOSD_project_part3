@@ -18,6 +18,10 @@ information from between nested parentheses, but had little luck so
 I figured it would be easier to write the method myself. However I will keep looking
 in the meantime.
 
+The StringParserUtility will be able to take multiple queries delimited by
+'and' or 'or', however, at the time, we will not be able to perform the 
+logical AND or OR. It will simple run the queries that it is given.
+
 Classes & Interfaces:
 (1) Utility class that performs the extraction of strings between parentheses 
 	Will contain methods for parsing out individual queries, combinators, and type of query

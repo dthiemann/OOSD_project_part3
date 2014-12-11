@@ -20,29 +20,28 @@ public class StringParserUtility {
 	 * Only public function that is used to parse and execute a 
 	 * query in the form of a string
 	 */
-	public static String[] parse(String equation) {
+	public static ParsedString parse(String equation) {
+		
 		if (equation == null) { return null; }
 		if (equation.equals("")) { return null; }
 		
 		ArrayList<String> result = new ArrayList<String>();
+		String[] resultList = null;
 		
 		int count_open = getCharCount(equation, '(');
 
 		ArrayList<String> arguments = getQueryArguments(equation, count_open);
-		
-		int numberOfQueries = arguments.size()/2;
-		
-		ArrayList<String> combinators = getQueryCombinators(equation, numberOfQueries);
 
-		for (int i = 0; i < arguments.size(); i++) {
-			System.out.println(arguments.get(i));
+		int numberOfQueries = arguments.size()/2;		
+		ArrayList<String> combinators = getQueryCombinators(equation, numberOfQueries);
+		for (int i = 0; i < combinators.size(); i++) {
+			/* check for proper combinators */
+			if (!combinators.get(i).equals("and") && !combinators.get(i).equals("or")) {
+				return null;
+			}
 		}
-		
-		for(int i = 0; i < combinators.size(); i++) {
-			System.out.println(combinators.get(i));
-		}
-		
 		return null;
+		//ArrayList<Field> fieldArray = new ArrayList<Field>();
 	}
 	
 	/*
