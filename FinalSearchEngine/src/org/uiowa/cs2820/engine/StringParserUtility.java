@@ -154,6 +154,9 @@ public class StringParserUtility {
 		return operatorSplit[0];
 	}
 	
+	/*
+	 * Calculates the number of queries given the string
+	 */
 	public static int getNumberOfQueries(String equation) {
 		
 		ArrayList<String> arguments = getQueryArguments(equation, getCharCount(equation, '('));
