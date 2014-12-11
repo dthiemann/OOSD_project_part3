@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ParsedString {
 	int numberOfQueries;
 	ArrayList<String> arguments;
-	ArrayList<String> operators;
+	ArrayList<String> combinators;
 	
 	/* 
 	 * This class allows the user to easily gain access to all the 
@@ -24,7 +24,7 @@ public class ParsedString {
 	public ParsedString(ArrayList<String> args, ArrayList<String> ops) {
 		this.numberOfQueries = args.size()/2;
 		this.arguments = args;
-		this.operators = ops;
+		this.combinators = ops;
 	}
 	
 	/*
@@ -44,7 +44,19 @@ public class ParsedString {
 	/*
 	 * Get the operators list
 	 */
-	public ArrayList<String> getOperators() {
-		return this.operators;
+	public ArrayList<String> getCombinators() {
+		return this.combinators;
+	}
+	
+	/*
+	 * Tests if two ParsedStrings are equal
+	 */
+	public boolean equals(ParsedString ps) {
+		
+		if(!this.arguments.equals(ps.arguments)) { return false; }
+		if(!this.combinators.equals(ps.combinators)) { return false; }
+		if(this.numberOfQueries != ps.numberOfQueries) { return false; }
+		
+		return true;
 	}
 }

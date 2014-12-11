@@ -24,10 +24,7 @@ public class StringParserUtility {
 		
 		if (equation == null) { return null; }
 		if (equation.equals("")) { return null; }
-		
-		ArrayList<String> result = new ArrayList<String>();
-		String[] resultList = null;
-		
+				
 		int count_open = getCharCount(equation, '(');
 
 		ArrayList<String> arguments = getQueryArguments(equation, count_open);
@@ -40,8 +37,9 @@ public class StringParserUtility {
 				return null;
 			}
 		}
-		return null;
-		//ArrayList<Field> fieldArray = new ArrayList<Field>();
+		
+		ParsedString newPS = new ParsedString(arguments, combinators);
+		return newPS;
 	}
 	
 	/*

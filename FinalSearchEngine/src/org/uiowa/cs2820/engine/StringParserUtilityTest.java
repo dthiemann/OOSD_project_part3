@@ -13,8 +13,30 @@ public class StringParserUtilityTest {
 	 */
 	@Test
 	public void test1() {
-		assertEquals(1,1);
-	}
+		String equation = "Search (prefix (Word,pre)) and (equals (Temperature,85)) or (suffix (anotherWord,friend))";
+		
+		/* Objects for testing */
+		ArrayList<String> argsTest = new ArrayList<String>();
+		ArrayList<String> opsTest = new ArrayList<String>();
+		
+		argsTest.add("prefix");
+		argsTest.add("Word,pre");
+		argsTest.add("equals");
+		argsTest.add("Temperature,85");
+		argsTest.add("suffix");
+		argsTest.add("anotherWord,friend");
+		
+		opsTest.add("and");
+		opsTest.add("or");
+		
+		ParsedString testPS = new ParsedString(argsTest, opsTest);
+		
+		/* Begin test */
+		
+		ParsedString newPS = StringParserUtility.parse(equation);
+		
+		assert();
+		}
 	
 	/*
 	 * Test that it sends the correct error when 
