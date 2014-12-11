@@ -28,7 +28,8 @@ public class StringParserUtility {
 		int count_open = getCharCount(equation, '(');
 
 		ArrayList<String> arguments = getQueryArguments(equation, count_open);
-
+		
+		/* Each query has 2 arguments */
 		int numberOfQueries = arguments.size()/2;		
 		ArrayList<String> combinators = getQueryCombinators(equation, numberOfQueries);
 		for (int i = 0; i < combinators.size(); i++) {
