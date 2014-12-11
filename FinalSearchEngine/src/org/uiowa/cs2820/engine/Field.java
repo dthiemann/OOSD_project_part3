@@ -31,12 +31,12 @@ public class Field implements Serializable {
   }
   public boolean isGreaterThan(Field other){
   	String myFieldValue = (String) other.getFieldValue().toString();
-  	return (FieldName.equal(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)>0));
+  	return (FieldName.equals(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)>0));
  
   	}
   public boolean isLessThan(Field other){
   	String myFieldValue = (String) other.getFieldValue().toString();
-  	return (FieldName.equal(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)<0));
+  	return (FieldName.equals(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)<0));
  
   	}
   public String toString() {
