@@ -45,7 +45,8 @@ public class StringParserUtilityTest {
 	 */
 	@Test
 	public void test4() {
-		
+		String equation = "";
+		assert(StringParserUtility.parse(equation) == null);
 	}
 	
 	/*
@@ -84,10 +85,10 @@ public class StringParserUtilityTest {
 	/*
 	 * Test for proper handling of Null values
 	 */
-	
 	@Test
 	public void test6() {
-		
+		String equation = null;
+		assert(StringParserUtility.parse(equation) == null);
 	}
 	
 	

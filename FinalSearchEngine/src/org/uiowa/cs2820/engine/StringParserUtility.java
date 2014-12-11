@@ -20,7 +20,12 @@ public class StringParserUtility {
 	 * Only public function that is used to parse and execute a 
 	 * query in the form of a string
 	 */
-	public static void parse(String equation) {
+	public static String[] parse(String equation) {
+		if (equation == null) { return null; }
+		if (equation.equals("")) { return null; }
+		
+		ArrayList<String> result = new ArrayList<String>();
+		
 		int count_open = getCharCount(equation, '(');
 
 		ArrayList<String> arguments = getQueryArguments(equation, count_open);
@@ -36,6 +41,8 @@ public class StringParserUtility {
 		for(int i = 0; i < combinators.size(); i++) {
 			System.out.println(combinators.get(i));
 		}
+		
+		return null;
 	}
 	
 	/*
