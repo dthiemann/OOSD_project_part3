@@ -29,6 +29,16 @@ public class Field implements Serializable {
 	  return FieldName.equals(other.FieldName) &
 			  FieldValue.toString().endsWith(myFieldValue);
   }
+  public boolean isGreaterThan(Field other){
+  	String myFieldValue = (String) other.getFieldValue().toString();
+  	return (FieldName.equal(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)>0));
+ 
+  	}
+  public boolean isLessThan(Field other){
+  	String myFieldValue = (String) other.getFieldValue().toString();
+  	return (FieldName.equal(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)<0));
+ 
+  	}
   public String toString() {
     return FieldName + ':' + FieldValue.toString();
     }
