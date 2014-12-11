@@ -20,7 +20,7 @@ in the meantime.
 
 The StringParserUtility will be able to take multiple queries delimited by
 'and' or 'or', however, at the time, we will not be able to perform the 
-logical AND or OR. It will simple run the queries that it is given.
+logical AND or OR. It will simple run the queries that it is given. 
 
 Classes & Interfaces:
 (1) Utility class that performs the extraction of strings between parentheses 
