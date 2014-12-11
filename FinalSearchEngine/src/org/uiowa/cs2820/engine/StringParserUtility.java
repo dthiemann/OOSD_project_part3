@@ -22,9 +22,8 @@ public class StringParserUtility {
 	 */
 	public static void parse(String equation) {
 		int count_open = getCharCount(equation, '(');
-		int count_close = getCharCount(equation, ')');
 
-		ArrayList<String> arguments = getQueryArguments(equation, count_open, count_close);
+		ArrayList<String> arguments = getQueryArguments(equation, count_open);
 		
 		int numberOfQueries = arguments.size()/2;
 		
@@ -42,7 +41,7 @@ public class StringParserUtility {
 	/*
 	 * Finds the number of characters 
 	 */
-	private static int getCharCount(String my_string, char my_char) {
+	public static int getCharCount(String my_string, char my_char) {
 		int count = 0;
 		
 		for (int i = 0; i < my_string.length(); i++) {
@@ -108,10 +107,10 @@ public class StringParserUtility {
 	/*
 	 * Get the arguments for each query, in sequential order
 	 */
-	public static ArrayList<String> getQueryArguments(String equation, int open_count, int close_count) {
+	public static ArrayList<String> getQueryArguments(String equation, int parenCount) {
 		ArrayList<String> my_equation = new ArrayList<String>();
 		
-		int running_count = open_count;
+		int running_count = parenCount;
 		while (running_count > 0) {
 			int paren_count = 0;
 			int i = 0;
@@ -148,5 +147,13 @@ public class StringParserUtility {
 		}
 		
 		return operatorSplit[0];
+	}
+	
+	public static int getNumberOfQueries(String equation) {
+		
+		ArrayList<String> arguments = getQueryArguments(equation, getCharCount(equation, '('));
+		int numberOfQueries = arguments.size()/2;
+		
+		return numberOfQueries;
 	}
 }
