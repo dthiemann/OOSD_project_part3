@@ -35,7 +35,12 @@ public class StringParserUtilityTest {
 		
 		ParsedString newPS = StringParserUtility.parse(equation);
 		
-		assert();
+		/* Test equality between arguments and combinators */
+		assert(testPS.arguments.equals(newPS.arguments));
+		assert(testPS.combinators.equals(newPS.combinators));
+		
+		assert(testPS.equals(newPS));
+
 		}
 	
 	/*
