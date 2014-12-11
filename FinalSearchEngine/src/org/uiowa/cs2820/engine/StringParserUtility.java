@@ -26,7 +26,7 @@ public class StringParserUtility {
 
 		ArrayList<String> arguments = getQueryArguments(equation, count_open, count_close);
 		
-		int numberOfQueries = arguments.size()/3;
+		int numberOfQueries = arguments.size()/2;
 		
 		ArrayList<String> combinators = getQueryCombinators(equation, numberOfQueries);
 
@@ -54,9 +54,19 @@ public class StringParserUtility {
 	}
 	
 	/*
+	 * Checks to see if the number of parentheses lines up
+	 */
+	public static boolean checkParenCount(String equation) {
+		if (getCharCount(equation, '(') == getCharCount(equation,')')){
+			return true;
+		}
+		return false;
+	}
+	
+	/*
 	 * Extracts the combinators (AND OR)
 	 */
-	private static ArrayList<String> getQueryCombinators(String equation, int numberOfQueries) {
+	public static ArrayList<String> getQueryCombinators(String equation, int numberOfQueries) {
 		ArrayList<String> combinators = new ArrayList<String>();
 		int closedParenPerQuery = 2;
 		
@@ -76,7 +86,8 @@ public class StringParserUtility {
 				/* Start recording the string value */
 				if (closedParenPassed == closedParenPerQuery) {
 					wordIndex++;
-					while(wordIndex >= equation.length() || equation.charAt(wordIndex) != '(') {
+					
+					while(wordIndex < equation.length() && equation.charAt(wordIndex) != '(') {
 						if (equation.charAt(wordIndex) != ' ') {
 							combinator += equation.charAt(wordIndex);
 						}
@@ -89,6 +100,7 @@ public class StringParserUtility {
 				wordIndex++;
 			}
 		}
+		
 		
 		return combinators;
 	}
@@ -123,5 +135,18 @@ public class StringParserUtility {
 		}
 		Collections.reverse(my_equation);
 		return my_equation;
+	}
+	
+	/*
+	 * Returns the operation (Should always be "Search")
+	 */
+	public static String getOperation(String equation) {
+		String []operatorSplit = equation.split(" ");
+		
+		if (!operatorSplit[0].equals("Search")) {
+			return null;
+		}
+		
+		return operatorSplit[0];
 	}
 }

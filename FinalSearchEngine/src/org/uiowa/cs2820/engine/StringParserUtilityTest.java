@@ -1,6 +1,7 @@
 package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
+
 import org.junit.*;
 
 public class StringParserUtilityTest {
@@ -19,7 +20,10 @@ public class StringParserUtilityTest {
 	 */
 	@Test
 	public void test2() {
+		String equation = "Search (prefix (Word,pre)) and (equals (Temperature,85)) or (suffix (anotherWord,friend))";
+		String operation = StringParserUtility.getOperation(equation);
 		
+		assert(operation.equals("Search"));
 	}
 	
 	/*
@@ -28,7 +32,9 @@ public class StringParserUtilityTest {
 	 */
 	@Test
 	public void test3() {
+		String equation = "Search (prefix (Word,pre)) and (equals (Temperature,85)) or (suffix (anotherWord,friend))";
 		
+		assert(StringParserUtility.checkParenCount(equation));
 	}
 	
 	/*
@@ -57,13 +63,6 @@ public class StringParserUtilityTest {
 	public void test6() {
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
