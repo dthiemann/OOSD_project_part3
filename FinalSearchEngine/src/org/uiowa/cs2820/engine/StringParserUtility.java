@@ -5,7 +5,7 @@ import java.util.Collections;
 
 /**
  * 
- * @author dthiemann
+ * @author Dylan Thiemann
  * 
  * This class is a utility that will parse a string into 
  * its sub-queries and then return the individual queries
