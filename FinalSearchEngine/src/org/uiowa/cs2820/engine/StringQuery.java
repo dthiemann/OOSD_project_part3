@@ -10,7 +10,7 @@ public class StringQuery {
 	}
 	
 	/*
-	 * Executes teh query on the given parsed string
+	 * Executes the query on the given parsed string
 	 */
 	public String[] executeQueries() {
 		String[] result = null;
@@ -32,18 +32,23 @@ public class StringQuery {
 			
 			/* Determine which kind of search to conduct */
 			if (op.equals("prefix")) {
+				/* Perform prefix search */
 				
 			}
 			else if (op.equals("suffix")) {
+				/* Perform suffix search */
 				
 			}
 			else if (op.equals("equals")) {
+				/* Perform equals search */
 				
 			}
 			else if (op.equals("greater than")) {
+				/* Perform 'greater than' search */
 				
 			}
 			else if (op.equals("less than")) {
+				/* Perform 'less than' search */
 				
 			}
 			
