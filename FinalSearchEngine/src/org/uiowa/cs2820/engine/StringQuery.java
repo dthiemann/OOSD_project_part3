@@ -33,11 +33,13 @@ public class StringQuery {
 			/* Determine which kind of search to conduct */
 			if (op.equals("prefix")) {
 				/* Perform prefix search */
-				
+				FieldSearch fs= new FieldSearch(field);
+				temp = fs.findPrefix();
 			}
 			else if (op.equals("suffix")) {
 				/* Perform suffix search */
-				
+				FieldSearch fs= new FieldSearch(field);
+				temp = fs.findSuffix();
 			}
 			else if (op.equals("equals")) {
 				/* Perform equals search */
@@ -47,11 +49,13 @@ public class StringQuery {
 			}
 			else if (op.equals("greater than")) {
 				/* Perform 'greater than' search */
-				
+				FieldSearch fs= new FieldSearch(field);
+				temp = fs.findGreaterThan();
 			}
 			else if (op.equals("less than")) {
 				/* Perform 'less than' search */
-				
+				FieldSearch fs= new FieldSearch(field);
+				temp = fs.findLessThan();
 			}
 			
 			/* Compile the results */

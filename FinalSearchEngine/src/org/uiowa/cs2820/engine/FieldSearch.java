@@ -21,7 +21,7 @@ public class FieldSearch {
 	  String[] R = null;
 	  return R;
   }
-  public String[] findLessThanThan() {
+  public String[] findLessThan() {
 	  String[] R = null;
 	  return R;
   }
