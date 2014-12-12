@@ -25,8 +25,10 @@ logical AND or OR. It will simple run the queries that it is given.
 Classes & Interfaces:
 (1) Utility class that performs the extraction of strings between parentheses 
 	Will contain methods for parsing out individual queries, combinators, and type of query
-(2) ComboSearch.java class that will make use of the Utility string parser to properly
-the searches.
+(2) StringQuery.java class that will make use of the Utility string parser to conduct the 
+	natural string queries
+(3) ParsedString.java class that is an object that stores the arguments and operators
+	for a given string of queries (used by StringQuery.java)
 
 Unit Tests:
 UtilityClassTest.java // Name pending
@@ -45,3 +47,4 @@ ComboSearchTest.java // Name pending
 	e.g. F.FindEquals() == ComboSearch(F); //Not sure how the definition will look yet
 2. Test for proper handling of Null values being passed 
 	e.g. F == null --> throw exception and/or display message to user
+	
