@@ -1,9 +1,12 @@
 package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
 import java.io.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class IntegrationTest {
 
@@ -55,7 +58,7 @@ public class IntegrationTest {
 	  }
 	catch (Exception e) { }
 	// put dummy data into the database
-	Iterator I = H.entrySet().iterator();
+	java.util.Iterator<Entry<String, ArrayList<Field>>> I = H.entrySet().iterator();
 	while (I.hasNext()) {
 	  Map.Entry pairs = (Map.Entry)I.next();
 	  Indexer N = new Indexer((String)pairs.getKey());
