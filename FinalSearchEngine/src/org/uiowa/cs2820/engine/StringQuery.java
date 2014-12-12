@@ -24,6 +24,7 @@ public class StringQuery {
 			}
 			
 			Field field = fields[i];
+			/* For individual results */
 			String[] temp = null;
 			
 			/* Determine which kind of search to conduct */
@@ -43,9 +44,38 @@ public class StringQuery {
 				
 			}
 			
-			/* Construct the results */
-			for (int j = 0; j < temp.length; j++) {
-				if ()
+			/* Compile the results */
+			
+			/* If not the first set */
+			if (i != 0) {
+				ArrayList<String> newRes = new ArrayList<String>();
+				for (int j = 0; j < temp.length; j++) {
+					/* perform a logical AND on our results */
+					if (isAnd) {
+						if(tempResults.contains(temp[i])) {
+							newRes.add(temp[i]);
+						}
+					} 
+					/* Perform a logical OR on our results */
+					else {
+						if (!tempResults.contains(temp[i])) {
+							newRes.add(temp[i]);
+						}
+					}
+				}
+				/* Update our storage structure */
+				if (isAnd) { tempResults = newRes; }
+				else { 
+					for (String e : newRes) {
+						tempResults.add(e);
+					}
+				}
+			} 
+			/* First element */
+			else {
+				for (int j = 0; j < temp.length; j++) {
+					tempResults.add(temp[j]);
+				}
 			}
 		}
 		
