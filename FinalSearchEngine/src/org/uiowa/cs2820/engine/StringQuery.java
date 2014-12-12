@@ -41,6 +41,8 @@ public class StringQuery {
 			}
 			else if (op.equals("equals")) {
 				/* Perform equals search */
+				FieldSearch fs = new FieldSearch(field);
+				temp = fs.findEquals();
 				
 			}
 			else if (op.equals("greater than")) {
