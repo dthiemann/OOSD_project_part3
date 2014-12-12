@@ -28,6 +28,23 @@ public class ParsedString {
 	}
 	
 	/*
+	 * Create field objects from the ParsedString object
+	 */
+	public Field[] getFields() {
+		Field[] parsedFields = new Field[this.numberOfQueries];
+		
+		/* Create a new field object for each query we have */
+		for (int i = 0; i < this.numberOfQueries; i++) {
+			/* extract the arguments from our arguments array */
+			String[] args = this.arguments.get(2*i).split(",");
+			Field temp = new Field(args[0], args[1]);
+			parsedFields[0] = temp;
+		}
+		
+		return parsedFields;
+	}
+	
+	/*
 	 * Get the number of queries
 	 */
 	public int getNumberOfQueries() {
