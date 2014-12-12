@@ -7,11 +7,10 @@ package org.uiowa.cs2820.engine;
 
 //Iterator pattern requires that this implements the Handler
 public class IdentifierRepository implements Handler{
-	
-	private String[] ids;
+	//examples of identifiers
+	public String ids[] = {"R","S","T","U","V"};
 	
 	public Iterator getIterator() {
-		
 		return new IdIterator();
 	}
 	
