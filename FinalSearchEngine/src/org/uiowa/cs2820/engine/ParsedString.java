@@ -45,6 +45,20 @@ public class ParsedString {
 	}
 	
 	/*
+	 * Extracts the operators for each key 
+	 */
+	public String[] getOperators() {
+		String[] ops = new String[this.numberOfQueries];
+		
+		for (int i = 0; i < this.numberOfQueries; i++) {
+			/* extract the arguments from our arguments array */
+			ops[i] = this.arguments.get(2*i+1);
+		}
+		
+		return ops;
+	}
+	
+	/*
 	 * Get the number of queries
 	 */
 	public int getNumberOfQueries() {
