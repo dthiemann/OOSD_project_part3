@@ -1,7 +1,5 @@
 package org.uiowa.cs2820.engine;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 
 import org.junit.*;
