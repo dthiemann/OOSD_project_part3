@@ -36,7 +36,7 @@ public class ParsedString {
 		/* Create a new field object for each query we have */
 		for (int i = 0; i < this.numberOfQueries; i++) {
 			/* extract the arguments from our arguments array */
-			String[] args = this.arguments.get(2*i).split(",");
+			String[] args = this.arguments.get(2*i + 1).split(",");
 			Field temp = new Field(args[0], args[1]);
 			parsedFields[0] = temp;
 		}
@@ -52,7 +52,7 @@ public class ParsedString {
 		
 		for (int i = 0; i < this.numberOfQueries; i++) {
 			/* extract the arguments from our arguments array */
-			ops[i] = this.arguments.get(2*i+1);
+			ops[i] = this.arguments.get(2*i);
 		}
 		
 		return ops;

@@ -32,11 +32,15 @@ public class StringParserUtility {
 		/* Each query has 2 arguments */
 		int numberOfQueries = arguments.size()/2;		
 		ArrayList<String> combinators = getQueryCombinators(equation, numberOfQueries);
-		for (int i = 0; i < combinators.size(); i++) {
-			/* check for proper combinators */
-			if (!combinators.get(i).equals("and") && !combinators.get(i).equals("or")) {
-				return null;
+		if (combinators != null) {
+			for (int i = 0; i < combinators.size(); i++) {
+				/* check for proper combinators */
+				if (!combinators.get(i).equals("and") && !combinators.get(i).equals("or")) {
+					return null;
+				}
 			}
+		} else {
+			combinators = new ArrayList<String>();
 		}
 		
 		ParsedString newPS = new ParsedString(arguments, combinators);
@@ -130,7 +134,9 @@ public class StringParserUtility {
 						expression = expression + equation.charAt(i);
 						i = i + 1;
 					}
-					my_equation.add(expression);
+					/* Remove leading/trailing white space */
+					String newExp = expression.trim();
+					my_equation.add(newExp);
 					break;
 				}
 				i++;
