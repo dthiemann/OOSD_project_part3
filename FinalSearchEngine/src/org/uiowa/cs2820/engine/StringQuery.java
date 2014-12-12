@@ -9,6 +9,9 @@ public class StringQuery {
 		this.ps = myPS;
 	}
 	
+	/*
+	 * Executes teh query on the given parsed string
+	 */
 	public String[] executeQueries() {
 		String[] result = null;
 		ArrayList<String> tempResults = new ArrayList<String>();
