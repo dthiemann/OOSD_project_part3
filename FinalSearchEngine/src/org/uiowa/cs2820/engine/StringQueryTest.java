@@ -16,8 +16,7 @@ public class StringQueryTest {
 		
 		StringQuery query = new StringQuery(myPS); 
 		String[] results = query.executeQueries();
-		if (results == null) {
-			assert(true);
-		}
+		
+		assert(results == null);
 	}
 }
