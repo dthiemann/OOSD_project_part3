@@ -7,6 +7,9 @@ public class StringQueryTest {
 	/* 
 	 * Test that appropriate data is transfered to StringQuery object
 	 * even if we return null
+	 * 
+	 * This test also represents how all the pieces interact with 
+	 * each other
 	 */
 	@Test
 	public void test1() {
