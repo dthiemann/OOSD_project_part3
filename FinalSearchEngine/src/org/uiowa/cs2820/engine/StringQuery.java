@@ -13,7 +13,7 @@ public class StringQuery {
 	 * Executes the query on the given parsed string
 	 */
 	public String[] executeQueries() {
-		String[] result = null;
+		String[] result;
 		ArrayList<String> tempResults = new ArrayList<String>();
 		
 		Field[] fields = this.ps.getFields();
@@ -58,7 +58,7 @@ public class StringQuery {
 				temp = fs.findLessThan();
 			}
 			
-			/* Compile the results */
+			/* Compile the results! */
 			
 			/* If not the first set */
 			if (i != 0) {
@@ -92,7 +92,13 @@ public class StringQuery {
 				}
 			}
 		}
+		/* Convert tempResults into a normal array */
+		result = new String[tempResults.size()];
+		for (int i = 0; i < tempResults.size(); i++) {
+			result[i] = tempResults.get(i);
+		}
 		
+		/* Return the final compile results */
 		return result;
 	}
 }
