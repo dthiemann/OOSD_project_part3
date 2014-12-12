@@ -2,44 +2,40 @@ package org.uiowa.cs2820.engine;
 
 
 	import java.util.List;
-	import java.util.ArrayList;
-	import javax.ws.rs.PUT;
-	import javax.ws.rs.Path;
-	import javax.ws.rs.Produces;
-	import javax.ws.rs.Consumes;
-	import javax.ws.rs.core.MediaType;
-	import javax.ws.rs.core.MultivaluedMap;
+import java.util.ArrayList;
+
+import javax.ws.rs.PUT;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 
 	import org.glassfish.jersey.internal.util.collection.MultivaluedStringMap;
-	import org.codehaus.jettison.json.JSONArray;
-	import org.codehaus.jettison.json.JSONTokener;
-	import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONTokener;
+import org.codehaus.jettison.json.JSONException;
 
-
-	@Path("/")
+	// The Java class will be hosted at the URI path "/rService
+	@Path("/rServer")
 	@Produces("text/html")
 	public class rServer {
+		//Java method will process HTTP GET requests
 	    @GET
 	    @Produces("text/plain")
 	    @Path("Search")
 	    @Consumes("text/plain")
-	    public String Search(String req) {//Edited code up to this point from the professor's original code
-	                List<String> params = new ArrayList<String>();
-	                JSONTokener S = new JSONTokener(req);
-	                JSONArray D = new JSONArray(); // empty by default
-	                try { D = new JSONArray(S); }
-	                catch (JSONException j) {
-	                for (int i=0; i<D.length(); i++) {
-	                        String e = "";
-	                        try { e = D.getString(i); }
-	                        catch (JSONException j) {};
-	                        params.add(e);
-	                        // System.out.println("reponse position" + i + "equals" + e);
-	                    }
-	                D = new JSONArray();
-	                for (int i=params.size()-1; i>=0; i--) D.put(params.get(i));
-	                String eBody = D.toString();
-	                return eBody;
-	    }
-	}
+	    //expecting a simple search and return of fields in the program
+	    public String[] getFields(Field req) {
+	    	FieldSearch A = new FieldSearch(req);
+	    	String D [] = A.findEquals();
+	    	System.out.println(D);
+	    	if (D.length < 3){
+	    		Indexer I = new Indexer("first.db");
+	    		I.addField(req);
+	    		I = new Indexer("second.db");
+	    		I.addField(req);
+	    	}
+	    	return D;	}
 }
