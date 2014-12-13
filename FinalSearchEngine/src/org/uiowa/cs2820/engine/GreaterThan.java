@@ -1,5 +1,5 @@
 public class GreaterThan {
-	class SearchGreaterThan implements Traverser {
+	/**class SearchGreaterThan implements Traverser {
 		Field f = null;
 		Node h = null;
 		ArrayList<Node> greater;
@@ -14,6 +14,7 @@ public class GreaterThan {
 			      return false;  // stop traversing; 
 			      }
 			    return true;
-			    }
-	}
+			    
+	}**/
+	
 }
