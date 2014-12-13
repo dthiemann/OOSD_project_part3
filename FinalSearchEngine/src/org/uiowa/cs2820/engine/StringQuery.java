@@ -18,17 +18,24 @@ public class StringQuery {
 		
 		Field[] fields = this.ps.getFields();
 		String[] operators = this.ps.getOperators();
-		
 		for (int i = 0; i < this.ps.numberOfQueries; i++) {
 			boolean isAnd = false;
 			String op = operators[i];
-			if (op.equals("and")) {
-				isAnd = true; 
+			
+			if (this.ps.getCombinators() != null) {
+				if (i != 0) {
+					if (this.ps.getCombinators().get(i-1).equals("and")) {
+						isAnd = true; 
+					}
+				}
 			}
 			
 			Field field = fields[i];
 			/* For individual results */
 			String[] temp = null;
+			
+
+			if(field == null) { break; }
 			
 			/* Determine which kind of search to conduct */
 			if (op.equals("prefix")) {
@@ -45,7 +52,7 @@ public class StringQuery {
 				/* Perform equals search */
 				FieldSearch fs = new FieldSearch(field);
 				temp = fs.findEquals();
-				
+				//System.out.println(1);
 			}
 			else if (op.equals("greater than")) {
 				/* Perform 'greater than' search */
@@ -91,6 +98,7 @@ public class StringQuery {
 					tempResults.add(temp[j]);
 				}
 			}
+			
 		}
 		/* Convert tempResults into a normal array */
 		result = new String[tempResults.size()];

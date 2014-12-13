@@ -21,10 +21,10 @@ public class ParsedString {
 	 * necessary information for constructing a query around a 
 	 * natural string
 	 */
-	public ParsedString(ArrayList<String> args, ArrayList<String> ops) {
+	public ParsedString(ArrayList<String> args, ArrayList<String> combs) {
 		this.numberOfQueries = args.size()/2;
 		this.arguments = args;
-		this.combinators = ops;
+		this.combinators = combs;
 	}
 	
 	/*
@@ -76,6 +76,9 @@ public class ParsedString {
 	 * Get the operators list
 	 */
 	public ArrayList<String> getCombinators() {
+		if (this.combinators == null) {
+			return null;
+		}
 		return this.combinators;
 	}
 	
