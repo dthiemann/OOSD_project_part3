@@ -24,7 +24,7 @@ public class GreaterThan {
 					}
 	public String[] find() {
 		String [] R = D.fetch(target);
-			if (R == null) R = new String[0];
+		if (R == null) R = new String[0];
 				return R;
 					}
 		}
