@@ -49,4 +49,5 @@ ComboSearchTest.java // Name pending
 		I had trouble finding a way to instantiate the database with items
 2. Test for proper handling of Null values being passed 
 	e.g. F == null --> throw exception and/or display message to user
+3. Test for proper handling of larger strings
 	
