@@ -1,21 +1,4 @@
 public class GreaterThan {
-	/**class SearchGreaterThan implements Traverser {
-		Field f = null;
-		Node h = null;
-		ArrayList<Node> greater;
-		public SearchGreaterThan(Field x){
-			f = x;
-			greater = new ArrayList<Node>();
-		}
-		public boolean process(Item I){
-			Node F = (Node) I;
-		  if (F.Key.isGreaterThan(f)) {
-			      h = F; // remember this node
-			      return false;  // stop traversing; 
-			      }
-			    return true;
-			    
-	}**/
 	Field target;
 	Database D;
 	public GreaterThan(Field f) { 
@@ -23,10 +6,17 @@ public class GreaterThan {
 		target = f; 
 					}
 	public String[] find() {
-		String [] R = D.fetch(target);
+		String [] R = D.fetchOther(target);
 		if (R == null) R = new String[0];
 				return R;
 					}
 		}
+	public Object GetNodes(){
+		ArrayList<Nodes> A = SearchGreaterThan.GetList();
+		List<Nodes> B =A;
+		//**Iterator<node> iterator = B.iterator();
+		return B;	
+			
+	}
 	
 }
