@@ -145,6 +145,13 @@ public class Node implements Item, Serializable {
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }
+   public static Node findNodeOther(Field f) {
+    setup();
+    SearchGreaterThan S = new SearchGreaterThan(f);  // make custom traverser 
+    D.traverse(S);  // go through the linked list
+    return S.h;     // either null or the found Node
+    }
+    
 
   // save Node to DiskSpace - invoke after changes to Node
   public void save() {
