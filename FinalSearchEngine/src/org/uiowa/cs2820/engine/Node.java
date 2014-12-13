@@ -47,6 +47,29 @@ class SearchSuffix implements Traverser{
 	}
 }
 
+class SearchGreaterThan implements Traverser {
+	Field f = null;
+	Node h = null;
+	static Arraylist<Node> greater;
+	public SearchGreaterThan(Field x){
+		f = x;
+		greater = new ArrayList<Node>;
+	}
+	public boolean process(Item I){
+		Node F = (Node);
+		if (F.Key.isGreaterThan(f)){
+			h =F;
+			List(h);
+		}
+	}
+	public void List(Node x){
+		greater.add(h);
+	}
+	public static Arraylist<Node> GetList(){
+		return greater;
+	}
+}
+
 class SearchlessThan implements Traverser {
 	Field f = null;
 	ArrayList<Node> less;
