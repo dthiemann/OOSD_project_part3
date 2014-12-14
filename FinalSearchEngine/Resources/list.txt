@@ -2,7 +2,7 @@ A word one
 B word three
 C word two
 D number four
-E word six
+E food lasagna
 F animal tiger
 G number six
 H food pizza
