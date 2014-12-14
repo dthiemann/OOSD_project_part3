@@ -72,21 +72,23 @@ class SearchGreaterThan implements Traverser {
 
 class SearchlessThan implements Traverser {
 	Field f = null;
-	ArrayList<Node> less;
+	static ArrayList<String> less;
 	public SearchlessThan(Field x){
 		f = x;
-		less = new ArrayList<Node>();
+		less = new ArrayList<String>();
 	}
 	public boolean process(Item I){
 		Node F = (Node) I;
-		String name1 = f.getFieldName();
-		String value1 = (String) f.getFieldValue();
-		String name2 = F.Key.getFieldName();
-		String value2 = (String) F.Key.getFieldValue();
-		if (name2.equals(name1) & value2.compareTo(value1)<0){
-			less.add(F);
+		if (F.Key.isLessThan(f)){
+			h =F;
 		}
 		return true;
+	}
+	public static void LessList(String x){
+		less.add(x);
+	}
+	public static ArrayList<String> GetLL(){
+		return less;
 	}
 }
 // local Traverser to find remove Id from all nodes
