@@ -9,3 +9,8 @@ H food pizza
 I animal ant
 J word movie
 K animal Kangaroo
+j word school
+l string school
+m noun school
+n building school
+o adjective school
