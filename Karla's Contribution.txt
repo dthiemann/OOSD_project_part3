@@ -32,7 +32,6 @@ Alphabetical_ComparisonTest.java //name temporary
    o	SmallerThan(“Word”, “example”), [(“Word”, “cat”), (“Word”, “dog”), (“Word”, “bee”)])
   •	Test that sends an error message to the user when no field object is given
     o	GreaterThan ()
-  •	Test that sends an error message when either a field category or  the value is missing
-   o	GreaterThan ((“example”));
+  
   •	 Test that sends an error message when the field category does not exist
   •	Test that displays a message when a field is Null
