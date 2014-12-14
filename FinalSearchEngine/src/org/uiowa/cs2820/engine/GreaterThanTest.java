@@ -9,7 +9,12 @@ import java.util.Map.Entry;
 import org.junit.Test;
 import java.io.*;
 import java.util.*;
-
+ 	/*Note: I try running the test on the linux machine but it doesn't work properly. 
+	  However, it works on the newest version of eclipse */
+	  
+	  /* R is an Arraylist that contains all the values that were greater than the given value.
+	  I created my own txt file, located in the Resource folder
+	  */
 
 public class GreaterThanTest {
 
