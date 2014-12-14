@@ -6,5 +6,5 @@ public interface Database {
 	  public abstract void remove(String id); // delete document (by identifier) 
 	  public abstract String[] fetchGreater(Field f); 
 	  public abstract String[] fetchLess(Field F);
-	  
+	  public abstract String[] fetchContains(Field F);
 	  }
