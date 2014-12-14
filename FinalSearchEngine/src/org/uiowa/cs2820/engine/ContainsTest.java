@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class ContainsTest {
 
-	
+	 /* R is an Arraylist that contains all the fields that have the same value as the value provided*/
 	
 	 //copy from integrationTest
 	 @Test
