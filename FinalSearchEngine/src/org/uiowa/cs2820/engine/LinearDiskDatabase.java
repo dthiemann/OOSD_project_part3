@@ -16,9 +16,14 @@ public class LinearDiskDatabase implements Database {
 	    return Identifier.getAllIds(n.identlist);
 	    }
 	 public String[] fetchGreater(Field f) {
-	    Node n = Node.findNodeOthers(f);
+	    Node n = Node.findNodeGreater(f);
 	    if (n == null) return new String[0];
 	    return Identifier.getAllIds(n.identlist);
 	    }
+	 public String[] fetchLess(Field f){
+	    Node n = Node.findNodeLess(f);
+	    if (n == null) return new String[0];
+	    return Identifier.getAllIds(n.identlist);
+	 }
 	  }
 		  
