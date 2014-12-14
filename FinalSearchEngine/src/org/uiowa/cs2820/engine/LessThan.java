@@ -1,20 +1,22 @@
+package org.uiowa.cs2820.engine;
+import java.util.*;
+
 public class LessThan {
-  class SearchLessThan implements Traverser {
-    Field f = null;
-    Node h = null;
-    ArrayList<Node> less;
-    public SearchGreaterThan(Field x){
-      f = x;
-      less = new ArrayList<Node>();
-}
-  public boolean process(Item I){
-    Node F = (Node) I;
-    if (F.Key.islessThan(f)) {
-      h = F; // remember this node
-      
-      return false; // stop traversing;
-}
-return true;
-      }
-    }
+	Field target;
+	Database D;
+	public LessThan(Field f) { 
+		D = new LinearDiskDatabase();
+		target = f; 
+					}
+	public String[] find() {
+		String [] R = D.fetchLess(target);
+		if (R == null) R = new String[0];
+			return R;
+				
+					}
+	public Object GetLlst(){
+		ArrayList<String> A = SearchLessThan.GetLL();
+			return A;
+		}
+	
 }
