@@ -14,6 +14,9 @@ public class LessThan {
 			return R;
 				
 					}
+	/*
+	* Returns an ArrayList containing values less than the given value
+	*/
 	public ArrayList<String> GetLlst(){
 		ArrayList<String> A = SearchlessThan.GetLL();
 			return A;
