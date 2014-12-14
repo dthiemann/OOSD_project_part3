@@ -63,7 +63,7 @@ public class ContainsTest {
 		F.find();
 		ArrayList<String> R = F.GetFields();
 	
-		assertEquals(R.size(),5);
+		assertEquals(R.size(),4);
 		assertTrue(R.contains("building"));
 		assertFalse(R.contains("animal"));
 	    }
