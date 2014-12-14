@@ -193,18 +193,21 @@ public class Node implements Item, Serializable {
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }
+    // find existing node that has field greater than the given value
   public static Node findNodeGreater(Field f){
 	    setup();
 	    SearchGreaterThan S = new SearchGreaterThan(f);
 	    D.traverse(S);  // go through the linked list
 	    return S.h;
   }
+  // find existing node that has field less than the given value
   public static Node findNodeLess(Field f){
 	    setup();
 	    SearchlessThan S = new SearchlessThan(f);
 	    D.traverse(S);  // go through the linked list
 	    return S.h;
 }
+// find existing node that has field containing the same given value
   public static Node findNode_Contains(Field f){
 	    setup();
 	    SearchContains S = new SearchContains(f);
