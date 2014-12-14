@@ -72,6 +72,7 @@ class SearchGreaterThan implements Traverser {
 
 class SearchlessThan implements Traverser {
 	Field f = null;
+	Node h = null;
 	static ArrayList<String> less;
 	public SearchlessThan(Field x){
 		f = x;
@@ -173,9 +174,14 @@ public class Node implements Item, Serializable {
    public String[] fetchGreater(Field f){
 		 Node n = Node.findNodeGreater(f);
 		 if (n == null) return new String[0];
-		 
 		 return Identifier.getAllIds(n.identlist);
 	  }
+	public static Node findNodeGreater(Field f){
+	  	setup();
+		SearchLessThan S = new SearchLessThan(f);
+		D.traverse(S);  // go through the linked list
+		 return S.h;
+  }
     
 
   // save Node to DiskSpace - invoke after changes to Node
