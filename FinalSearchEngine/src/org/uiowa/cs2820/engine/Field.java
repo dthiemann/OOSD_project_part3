@@ -49,6 +49,14 @@ public class Field implements Serializable {
   	return (FieldName.equals(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)<0));
  
   	}
+  public boolean isIn(Field other){
+	  	String myFieldValue = (String) other.getFieldValue().toString();
+	  	String c =FieldValue.toString();
+	  	if (c.equals(myFieldValue) ){
+	  		SearchContains.Clst(FieldName);
+	  	}
+	  	return c.equals(myFieldValue);
+	  }
   public String toString() {
     return FieldName + ':' + FieldValue.toString();
     }
