@@ -92,6 +92,28 @@ class SearchlessThan implements Traverser {
 		return less;
 	}
 }
+class SearchContains implements Traverser {
+	Field f = null;
+	Node h = null;
+	static ArrayList<String> cc;
+	public SearchContains(Field x){
+		f = x;
+		cc = new ArrayList<String>();
+	}
+	public boolean process(Item I){
+		Node F = (Node) I;
+		if (F.Key.isIn(f)){
+			h =F;
+		}
+		return true;
+	}
+	public static void Clst(String x){
+		cc.add(x);
+	}
+	public static ArrayList<String> GetClst(){
+		return cc;
+	}
+}
 // local Traverser to find remove Id from all nodes
 class IdRemover implements Traverser {
   ArrayList<Node> empties;  // an array of nodes with no Ids
