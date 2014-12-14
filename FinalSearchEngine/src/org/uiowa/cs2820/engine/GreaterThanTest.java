@@ -82,7 +82,7 @@ public class GreaterThanTest {
 		GreaterThan F = new GreaterThan(f);
 		F.find();
 		ArrayList<String> R = F.GetNodes();
-		assertEquals(R.size(),4);
+		assertEquals(R.size(),5);
 		assertTrue(R.contains("movie"));
 		assertFalse(R.contains("six"));
 	    }
