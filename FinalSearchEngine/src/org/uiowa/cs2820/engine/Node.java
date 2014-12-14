@@ -168,12 +168,12 @@ public class Node implements Item, Serializable {
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }
-   public static Node findNodeOther(Field f) {
-    setup();
-    SearchGreaterThan S = new SearchGreaterThan(f);  // make custom traverser 
-    D.traverse(S);  // go through the linked list
-    return S.h;     // either null or the found Node
-    }
+   public String[] fetchGreater(Field f){
+		 Node n = Node.findNodeGreater(f);
+		 if (n == null) return new String[0];
+		 
+		 return Identifier.getAllIds(n.identlist);
+	  }
     
 
   // save Node to DiskSpace - invoke after changes to Node
