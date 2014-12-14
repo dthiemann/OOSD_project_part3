@@ -193,18 +193,25 @@ public class Node implements Item, Serializable {
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }
-   public String[] fetchGreater(Field f){
-		 Node n = Node.findNodeGreater(f);
-		 if (n == null) return new String[0];
-		 return Identifier.getAllIds(n.identlist);
-	  }
-	public static Node findNodeGreater(Field f){
-	  	setup();
-		SearchLessThan S = new SearchLessThan(f);
-		D.traverse(S);  // go through the linked list
-		 return S.h;
+  public static Node findNodeGreater(Field f){
+	    setup();
+	    SearchGreaterThan S = new SearchGreaterThan(f);
+	    D.traverse(S);  // go through the linked list
+	    return S.h;
   }
-    
+  public static Node findNodeLess(Field f){
+	    setup();
+	    SearchlessThan S = new SearchlessThan(f);
+	    D.traverse(S);  // go through the linked list
+	    return S.h;
+}
+  public static Node findNode_Contains(Field f){
+	    setup();
+	    SearchContains S = new SearchContains(f);
+	    D.traverse(S);  // go through the linked list
+	    return S.h;
+}
+
 
   // save Node to DiskSpace - invoke after changes to Node
   public void save() {
