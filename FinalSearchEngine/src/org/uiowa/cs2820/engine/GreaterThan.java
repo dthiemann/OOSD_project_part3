@@ -14,7 +14,7 @@ public class GreaterThan {
 			return R;
 				
 					}
-	public Object GetNodes(){
+	public ArrayList<String> GetNodes(){
 		ArrayList<String> A = SearchGreaterThan.GetList();
 			return A;
 		}
