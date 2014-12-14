@@ -15,7 +15,7 @@ public class LessThan {
 				
 					}
 	public Object GetLlst(){
-		ArrayList<String> A = SearchLessThan.GetLL();
+		ArrayList<String> A = SearchlessThan.GetLL();
 			return A;
 		}
 	
