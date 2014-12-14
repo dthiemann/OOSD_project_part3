@@ -44,7 +44,7 @@ public class Field implements Serializable {
   	String OtherFV =FieldValue.toString();
   	boolean b = ((OtherFV.compareTo(myFieldValue))>0);
 	if (b==true && FieldName.equals(other.FieldName) ){
-  		SearchLessThan.List(OtherFV);
+  		SearchlessThan.LessList(OtherFV);
   	}
   	return (FieldName.equals(other.FieldName) & (FieldValue.toString().compareTo(myFieldValue)<0));
  
