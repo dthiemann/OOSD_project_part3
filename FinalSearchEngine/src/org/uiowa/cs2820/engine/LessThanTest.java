@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import java.io.*;
 
-
+ /* R is an Arraylist that contains all the values that are less than the given value.*/
 
 public class LessThanTest {
 
