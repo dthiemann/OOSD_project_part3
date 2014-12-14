@@ -50,22 +50,22 @@ class SearchSuffix implements Traverser{
 class SearchGreaterThan implements Traverser {
 	Field f = null;
 	Node h = null;
-	static Arraylist<Node> greater;
+	static ArrayList<String> greater;
 	public SearchGreaterThan(Field x){
 		f = x;
-		greater = new ArrayList<Node>;
+		greater = new ArrayList<String>();
 	}
 	public boolean process(Item I){
-		Node F = (Node);
+		Node F = (Node) I;
 		if (F.Key.isGreaterThan(f)){
 			h =F;
-			List(h);
 		}
+		return true;
 	}
-	public void List(Node x){
-		greater.add(h);
+	public static void List(String x){
+		greater.add(x);
 	}
-	public static Arraylist<Node> GetList(){
+	public static ArrayList<String> GetList(){
 		return greater;
 	}
 }
